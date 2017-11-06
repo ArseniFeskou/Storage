@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -35,8 +36,10 @@ public class Runner {
 		Timetable timetable1[] = new Timetable[1];
 		try {
 			timetable1[0]=(Timetable)in.readObject();
-		} catch (ClassNotFoundException e) {
+		} catch (FileNotFoundException e) {
 		e.printStackTrace();
+		}catch(ClassNotFoundException e1) {
+		e1.printStackTrace();	
 		}
 		for (Timetable Timetable : timetable1) {
 		System.out.println(Timetable);  
